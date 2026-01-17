@@ -30,6 +30,7 @@ a{
     padding: 0 15px;
 
 }
+
 /* ------------------------------HEADER AND FOOTER_LOGO-------------------------*/
 .logo{
     font-family: "Raleway", sans-serif;
@@ -545,5 +546,317 @@ color: #fff;
         line-height: 1.5;
         letter-spacing: 0.02em;
         color:#f4f4fd;
+}
+
+.footer-input{
+    margin-left: auto;
+}
+
+.footer-form{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.footer-input-email{
+    width: 264px;
+    height: 40px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    background-color: transparent;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: #fff;
+    box-sizing: border-box;
+    outline: transparent;
+
+}
+
+.footer-input-email:focus{
+    border-color: #31d0aa;
+}
+
+.footer-input-email::placeholder{
+font-size: 12px;
+line-height: 2;
+letter-spacing: 0.04em;
+color: #fff;
+}
+
+.footer-input-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 165px;
+height: 40px;
+gap: 16px;
+
+    border-radius: 4px;
+    border: none;
+padding-block: 8px;
+padding-inline: 24px;
+
+background-color: #4d5ae5;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.04em;
+text-align: center;
+color: #fff;
+cursor: pointer;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sub-icon{
+    fill: #fff;
+}
+
+.footer-input-button:hover,
+.footer-input-button:focus{
+    background-color: #31d0aa;
+}
+
+
+
+/* ------------------------------Backdrop-------------------------*/
+
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(46, 47, 66, 0.4);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-open{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 408px;
+    min-height: 584px;
+    border-radius: 4px;
+
+    transform: translate(-50%, -50%);
+
+    padding-top: 72px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+    background-color:  #fcfcfc;  
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop:not(.is-open) .modal{
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.modal-close{
+    width: 24px;
+    height: 24px;
+
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0; 
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+
+    background-color: #e7e9fc;
+    cursor: pointer;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.modal-close:hover,
+.modal-close:focus{
+    background-color: #404bbf;
+    border-color: transparent;
+}
+
+.modal-close:hover .close-icon,
+.modal-close:focus .close-icon{
+  fill: #fff;
+}
+
+.close-icon{
+ fill: #2e2f42;
+ transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.modal-title{
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.02em;
+text-align: center;
+color: #2e2f42;
+
+
+margin-bottom: 16px;
+
+}
+
+.modal-field{
+    margin-bottom: 8px;
+}
+
+.modal-input-wrapper{
+    position: relative;
+}
+
+.modal-input{
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    height: 40px;
+    width: 100%;
+    background-color: transparent;
+    padding-left: 38px;
+    padding-right: 16px;
+    outline: transparent;
+
+}
+
+.modal-input-icon{
+    fill: #2e2f42;
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+
+
+}
+
+.modal-input:focus{
+    border-color: #4d5ae5;
+}
+
+.modal-input:focus + .modal-input-icon{
+    fill: #4d5ae5
+}
+
+
+.modal-label{
+    display: block;
+    font-size: 12px;
+line-height: 1.16667;
+letter-spacing: 0.04em;
+color: #8e8f99;
+
+margin-bottom: 4px;
+
+}
+
+.modal-text-area{
+    height: 120px;
+    width: 100%;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    resize: none;
+    padding: 8px 16px;
+    outline: transparent;
+
+}
+
+.modal-text-area:focus{
+    border-color: #4d5ae5;
+}
+
+.modal-checkbox:checked + .modal-checkbox-label span{
+    background-color: #404bbf;
+    border: none;
+    fill: #f4f4fd;
+
+}
+
+
+.modal-checkbox-label{
+    font-size: 12px;
+line-height: 1.16667;
+letter-spacing: 0.04em;
+color: #8e8f99;
+display: flex;
+align-items: center;
+cursor: pointer;
+}
+
+.modal-checkbox-label a{
+    color: #4d5ae5;
+    text-decoration: underline;
+}
+
+.modal-checkbox-label span{
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+.button-send{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 24px;
+        margin-bottom: 24px;
+        min-width: 169px;
+        height: 56px;
+        border-radius: 4px;
+        padding: 16px 32px;
+        border: none;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.04em;
+            color: #fff;
+            background-color: #4d5ae5;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.button-send{ 
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-send:hover,
+.button-send:focus{
+    background-color: #404bbf;
 }
 
